@@ -1,7 +1,6 @@
-
-  
-.progress{
-    position: relative; /* with scale */
+.progress {
+    position: relative;
+    /* with scale */
     height: 20px;
     width: 500px;
     background-color: rgb(233, 236, 239);
@@ -9,14 +8,14 @@
     border-radius: 15px;
     overflow: hidden;
 
-    div{
+    div {
         background-color: #00c251;
         color: #fff;
         height: 100%;
         text-align: center;
     }
 
-    span{
+    span {
         position: absolute;
         width: 100%;
         display: flex;

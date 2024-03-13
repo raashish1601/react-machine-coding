@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { PROGRESS_BAR_MIN_VALUE, PROGRESS_BAR_MAX_VALUE } from "../../constants/constants";
 import styles from './ProgressBar.module.scss';
 
-function ProgressBar({ value = 0, onComplete = () => {} }) {
+function ProgressBar({ value = 0, onComplete = () => { } }) {
   const [percent, setPercent] = useState(value);
 
   useEffect(() => {
