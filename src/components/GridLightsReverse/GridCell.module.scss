@@ -1,0 +1,11 @@
+.cell {
+    background-color: transparent;
+    border: 1px solid #000;
+    aspect-ratio: 1 / 1; /* Set aspect ratio to 1:1 for perfect squares */
+    display: flex;
+    width: calc((100% - 40px)/3);
+}
+
+.cellActivated {
+    background-color: green;
+}
