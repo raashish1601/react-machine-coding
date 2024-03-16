@@ -1,20 +1,38 @@
-import { useState } from "react";
-import styles from './StarRating.module.scss';
+import React, { useState } from "react";
+import Star from "./Star";
+import styles from "./StarRating.module.scss";
 
-function StarRating() {
-    const [selectedStarsCount, setSelectedStarsCount] = useState(0);
+function StarRating({ value, total }) {
+    const [rating, setRating] = useState(value || 0);
+    const [selection, setSelection] = useState(0);
 
+    const onHover = (event) => {
+        let val = 0;
+        if (event && event.target && event.target.getAttribute("data-star-id")) {
+            val = event.target.getAttribute("data-star-id");
+        }
+        setSelection(val);
+    };
     return (
-        <div className={styles['starsContainer']}>
-            Star Rating
-            <div className={styles['starsContainer_stars']}>
-                {[...Array(5)].map((_, index) => {
-                    return <span className={styles['starsContainer_stars']} onClick={() => setSelectedStarsCount(index + 1)} key={index}>&#9733;</span>
-                })}
-            </div>
-            Rating Count: {selectedStarsCount}
+        <div
+            className={styles['starsContainer']}
+            onMouseLeave={() => onHover(null)}
+            onMouseOver={onHover}
+            onClick={(e) =>
+                setRating(e.target.getAttribute("data-star-id") || rating)
+            }
+        >
+            {Array.from({ length: total }, (_, index) => {
+                return (
+                    <Star
+                        marked={selection ? selection >= index + 1 : rating >= index + 1}
+                        starId={index + 1}
+                        key={`star_${index}`}
+                    />
+                );
+            })}
         </div>
-    )
-}
+    );
+};
 
 export default StarRating;

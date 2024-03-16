@@ -1,15 +1,6 @@
 .starsContainer {
-    font-size: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-
-    &_stars {
-        cursor: pointer;
-
-        &--selected {
-            color: yellow;
-        }
-    }
+    font-size: 100px;
 }

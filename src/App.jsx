@@ -1,21 +1,23 @@
 import './App.css';
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import StarRating from './components/StarRating/StarRating';
+const StarRatingLazy = lazy(() => import('./components/StarRating/StarRating'));
 const ProgressBarWrapperLazy = lazy(() => import('./components/ProgressBar/ProgressBarWrapper'));
-const UseEffectCustomHookLazy = lazy(() => import('./components/UseEffectCustomHook/UseEffectCustomHook'));
-const GenerateRandomColorCirclesLazy = lazy(() => import('./components/GenerateRandomColorCircles/GenerateRandomColorCircles'));
 const UseMemoCustomHookLazy = lazy(() => import('./components/UseMemoCustomHook/UseMemoCustomHook'));
+const UseEffectCustomHookLazy = lazy(() => import('./components/UseEffectCustomHook/UseEffectCustomHook'));
 const GridLightsReverseLazy = lazy(() => import('./components/GridLightsReverse/GridLightsReverse'));
+const GenerateRandomColorCirclesLazy = lazy(() => import('./components/GenerateRandomColorCircles/GenerateRandomColorCircles'));
 
 function App() {
   return (
     <>
-      {/* <StarRating /> */}
       <BrowserRouter>
         <ul>
           <li>
             <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/star-rating">Star Rating</Link>
           </li>
           <li>
             <Link to="/progress-bar">Progress Bar</Link>
@@ -35,6 +37,7 @@ function App() {
         </ul>
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
+            <Route exact path="/star-rating" element={<StarRatingLazy value={0} total={5}/>} />
             <Route exact path="/progress-bar" element={<ProgressBarWrapperLazy />} />
             <Route exact path="/custom-use-memo" element={<UseMemoCustomHookLazy />} />
             <Route exact path="/custom-use-effect" element={<UseEffectCustomHookLazy />} />
