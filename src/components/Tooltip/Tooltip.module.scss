@@ -1,0 +1,46 @@
+.tooltip{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &_head{
+        position:relative;
+        &--message{
+            display:block;
+            position:absolute;
+            width:100%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            &--text{	
+                border-radius:6px;
+                padding:10px;
+                background:#191B1C;
+                color:white;
+            }
+            
+            &--top-left,&--bottom-left{
+                margin-right:auto;
+            }
+            &--top-right,&--bottom-right{
+                margin-left:auto;	
+            }
+        }
+        
+        &--message-top{
+            top:0;
+            left:0;
+            transform:translate(0,-100%)
+        }
+        
+        &--message-bottom{
+            bottom:0;
+            left:0;
+            transform:translate(0,100%)
+        }
+        
+        &:hover &--message{
+            display:flex;	
+        }
+    }
+}

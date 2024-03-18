@@ -1,0 +1,15 @@
+.userPill {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: black;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 16px;
+    cursor: pointer;
+
+    img {
+        height: 100%;
+    }
+}

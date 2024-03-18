@@ -1,0 +1,11 @@
+.tooltipHead{
+    background:orange;
+	color:black;
+	padding:10px;
+	border-radius:6px;
+	word-break:break-all;
+}
+
+.list-items-container:not(.list-items-container:last-child){
+	color: red;
+}

@@ -1,0 +1,57 @@
+.userSearchContainer {
+    display: flex;
+    position: relative;
+
+    &_input {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        input {
+            border: none;
+            height: 20px;
+            padding: 5px;
+        }
+        input:focus {
+            outline: none;
+        }
+
+        &_suggestionsList {
+            max-height: 300px;
+            overflow-y: scroll;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            li {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 8px 10px;
+                cursor: pointer;
+                border-bottom: 1px solid #ccc;
+                &--active {
+                    background-color: #ccc;
+                }
+            }
+            li:last-child {
+                border-bottom: none;
+            }
+            li:hover {
+                background-color: #ccc;
+            }
+            li img {
+                height: 20px;
+            }
+            &--active{
+                background-color: #ccc;
+            }
+        }
+    }
+}
