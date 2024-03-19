@@ -26,9 +26,13 @@ function MultiselectInput() {
                     console.error(err);
                 });
         };
-
         fetchUsers();
     }, [searchTerm]);
+
+    useEffect(() => {
+        // Set focus on input element when component mounts
+        inputRef.current.focus();
+    }, []);
 
     const handleSelectUser = (user) => {
         setSelectedUsers([...selectedUsers, user]);
@@ -59,7 +63,6 @@ function MultiselectInput() {
             handleRemoveUser(lastUser);
             setSuggestions([]);
         } else if (e.key === "ArrowDown" && suggestions?.users?.length > 0) {
-            console.log("ArrowDown");
             e.preventDefault();
             setActiveSuggestion((prevIndex) =>
                 prevIndex < suggestions.users.length - 1 ? prevIndex + 1 : prevIndex

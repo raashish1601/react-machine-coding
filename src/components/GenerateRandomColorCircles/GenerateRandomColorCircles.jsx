@@ -28,7 +28,7 @@ function GenerateRandomColorCircles() {
                     style={{
                         position: "absolute",
                         left: circle.x - 31 ,
-                        top: circle.y - 163,
+                        top: circle.y - 233,
                         width: "50px",
                         height: "50px",
                         borderRadius: "50%",
