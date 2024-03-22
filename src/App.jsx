@@ -6,6 +6,11 @@ import Navbar from './components/Navbar/Navbar';
 import About from './pages/about';
 import Blog from './pages/blog';
 import Home from './pages/home';
+const ElementsInViewPort = lazy(()=>import('./components/ElementsInViewPort/ElementsInViewPort'));
+const AccordianWrapper = lazy(()=>import('./components/Accordian/AccordianWrapper'));
+const CountdownTimer = lazy(()=>import('./components/CountdownTimer/CountdownTimer'));
+const OverlappingCircles = lazy(()=>import('./components/OverlappingCircles/OverlappingCircles'));
+const ModalWrapper = lazy(()=> import('./components/Modal/ModalWrapper'));
 const TypeaheadLazy = lazy(() => import('./components/Typeahead/Typeahead'));
 const OtpLoginLazy = lazy(() => import('./components/OtpLogin/OtpLogin'));
 const TooltipLazy = lazy(() => import('./components/Tooltip/Tooltip'));
@@ -16,7 +21,6 @@ const UseMemoCustomHookLazy = lazy(() => import('./components/UseMemoCustomHook/
 const UseEffectCustomHookLazy = lazy(() => import('./components/UseEffectCustomHook/UseEffectCustomHook'));
 const GridLightsReverseLazy = lazy(() => import('./components/GridLightsReverse/GridLightsReverse'));
 const GenerateRandomColorCirclesLazy = lazy(() => import('./components/GenerateRandomColorCircles/GenerateRandomColorCircles'));
-// const CountdownTimerLazy = lazy(() => ('./components/CountdownTimer/CountdownTimer'));
 
 function App() {
   return (
@@ -58,6 +62,21 @@ function App() {
               <Link to="/typeahead">Typeahead</Link>
             </li>
             <li>
+              <Link to="/modal">Modal</Link>
+            </li>
+            <li>
+              <Link to="/overlapping-circles">Overlapping Circles</Link>
+            </li>
+            <li>
+              <Link to="/countdown-timer">Countdown Timer</Link>
+            </li>
+            <li>
+              <Link to="/accordian">Accordian</Link>
+            </li>
+            <li>
+              <Link to="/elements-viewport">Elements Viewport</Link>
+            </li>
+            <li>
               <Link to="/dark-mode">Dark Mode</Link>
             </li>
           </ul>
@@ -85,6 +104,11 @@ function App() {
               <Route exact path="/multiselect-input" element={<MultiselectInputLazy />} />
               <Route exact path="/otp-login" element={<OtpLoginLazy />} />
               <Route exact path="/typeahead" element={<TypeaheadLazy />} />
+              <Route exact path="/modal" element={<ModalWrapper />} />
+              <Route exact path="/countdown-timer" element={<CountdownTimer />} />
+              <Route exact path="/overlapping-circles" element={<OverlappingCircles />} />
+              <Route exact path="/accordian" element={<AccordianWrapper />} />
+              <Route exact path="/elements-viewport" element={<ElementsInViewPort />} />
               <Route exact path="/generate-random-color-circles" element={<GenerateRandomColorCirclesLazy />} />
               <Route exact path="/dark-mode" element={<Navbar />} />
               <Route exact path="/" element={<Home />} />
