@@ -1,17 +1,6 @@
 @import './variables.css';
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    height: 85vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    height: 200vh;
     font-family: sans-serif;
 }

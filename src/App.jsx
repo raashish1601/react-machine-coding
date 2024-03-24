@@ -1,4 +1,3 @@
-import './App.css';
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { ThemeProvider } from './context/use-theme-context';
@@ -6,11 +5,11 @@ import Navbar from './components/Navbar/Navbar';
 import About from './pages/about';
 import Blog from './pages/blog';
 import Home from './pages/home';
-const ElementsInViewPort = lazy(()=>import('./components/ElementsInViewPort/ElementsInViewPort'));
-const AccordianWrapper = lazy(()=>import('./components/Accordian/AccordianWrapper'));
-const CountdownTimer = lazy(()=>import('./components/CountdownTimer/CountdownTimer'));
-const OverlappingCircles = lazy(()=>import('./components/OverlappingCircles/OverlappingCircles'));
-const ModalWrapper = lazy(()=> import('./components/Modal/ModalWrapper'));
+const ElementsInViewPort = lazy(() => import('./components/ElementsInViewPort/ElementsInViewPort'));
+const AccordianWrapper = lazy(() => import('./components/Accordian/AccordianWrapper'));
+const CountdownTimer = lazy(() => import('./components/CountdownTimer/CountdownTimer'));
+const OverlappingCircles = lazy(() => import('./components/OverlappingCircles/OverlappingCircles'));
+const ModalWrapper = lazy(() => import('./components/Modal/ModalWrapper'));
 const TypeaheadLazy = lazy(() => import('./components/Typeahead/Typeahead'));
 const OtpLoginLazy = lazy(() => import('./components/OtpLogin/OtpLogin'));
 const TooltipLazy = lazy(() => import('./components/Tooltip/Tooltip'));
@@ -20,12 +19,16 @@ const ProgressBarWrapperLazy = lazy(() => import('./components/ProgressBar/Progr
 const UseMemoCustomHookLazy = lazy(() => import('./components/UseMemoCustomHook/UseMemoCustomHook'));
 const UseEffectCustomHookLazy = lazy(() => import('./components/UseEffectCustomHook/UseEffectCustomHook'));
 const GridLightsReverseLazy = lazy(() => import('./components/GridLightsReverse/GridLightsReverse'));
+import ScrollIndicator from './components/ScrollIndicator/ScrollIndicator';
 const GenerateRandomColorCirclesLazy = lazy(() => import('./components/GenerateRandomColorCircles/GenerateRandomColorCircles'));
+import './App.css';
+import "./styles/globals.scss";
 
 function App() {
   return (
     <>
       <ThemeProvider>
+        <ScrollIndicator />
         <BrowserRouter>
           <ul>
             <li>
