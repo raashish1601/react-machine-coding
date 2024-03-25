@@ -63,3 +63,46 @@ export const ACCORDIAN_DATA = [
         info: "Locavore franzen fashion axe live-edge neutra irony synth af tilde shabby chic man braid chillwave waistcoat copper mug messenger bag. Banjo snackwave blog, microdosing thundercats migas vaporware viral lo-fi seitan "
     }
 ];
+
+export const MULTILEVEL_DROPDOWN_DATA = [
+    {
+        title: "Home",
+    },
+    {
+        title: "Services",
+        submenu: [{
+            title: "web design",
+        },
+        {
+            title: "web development",
+            submenu: [{
+                title: "Frontend",
+            },
+            {
+                title: "Backend",
+                submenu: [{
+                    title: "NodeJS",
+                },
+                {
+                    title: "PHP",
+                },
+                ],
+            },
+            ],
+        },
+        {
+            title: "SEO",
+        },
+        ],
+    },
+    {
+        title: "About",
+        submenu: [{
+            title: "Who we are",
+        },
+        {
+            title: "Our values",
+        },
+        ],
+    },
+];

@@ -20,6 +20,8 @@ const UseMemoCustomHookLazy = lazy(() => import('./components/UseMemoCustomHook/
 const UseEffectCustomHookLazy = lazy(() => import('./components/UseEffectCustomHook/UseEffectCustomHook'));
 const GridLightsReverseLazy = lazy(() => import('./components/GridLightsReverse/GridLightsReverse'));
 import ScrollIndicator from './components/ScrollIndicator/ScrollIndicator';
+const SelectableGrid = lazy(() => import('./components/SelectableGrid/SelectableGrid'));
+import MultilvelDropdown from './components/MultilevelDropdown/MultilevelDropdown';
 const GenerateRandomColorCirclesLazy = lazy(() => import('./components/GenerateRandomColorCircles/GenerateRandomColorCircles'));
 import './App.css';
 import "./styles/globals.scss";
@@ -29,6 +31,7 @@ function App() {
     <>
       <ThemeProvider>
         <ScrollIndicator />
+        <MultilvelDropdown />
         <BrowserRouter>
           <ul>
             <li>
@@ -77,6 +80,9 @@ function App() {
               <Link to="/accordian">Accordian</Link>
             </li>
             <li>
+              <Link to="/selectable-grid">Selectable Grid</Link>
+            </li>
+            <li>
               <Link to="/elements-viewport">Elements Viewport</Link>
             </li>
             <li>
@@ -111,6 +117,7 @@ function App() {
               <Route exact path="/countdown-timer" element={<CountdownTimer />} />
               <Route exact path="/overlapping-circles" element={<OverlappingCircles />} />
               <Route exact path="/accordian" element={<AccordianWrapper />} />
+              <Route exact path="/selectable-grid" element={<SelectableGrid />} />
               <Route exact path="/elements-viewport" element={<ElementsInViewPort />} />
               <Route exact path="/generate-random-color-circles" element={<GenerateRandomColorCirclesLazy />} />
               <Route exact path="/dark-mode" element={<Navbar />} />
