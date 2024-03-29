@@ -1,5 +1,9 @@
 @import './variables.css';
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     height: 200vh;
     font-family: sans-serif;

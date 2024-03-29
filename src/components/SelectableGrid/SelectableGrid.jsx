@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import "./SelectableGrid.css";
+import "./SelectableGrid.scss";
 
 const SelectableGrid = ({ rows = 10, cols = 10 }) => {
     const [isMouseDown, setIsMouseDown] = useState(false);
