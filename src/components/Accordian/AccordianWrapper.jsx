@@ -6,8 +6,8 @@ export default function AccordianWrapper() {
         <div className="App">
             <h1>Accordion</h1>
 
-            {ACCORDIAN_DATA.map((question) => {
-                return <Accordion {...question} />;
+            {ACCORDIAN_DATA.map((question, indx) => {
+                return <Accordion {...question} indx={indx} />;
             })}
         </div>
     );

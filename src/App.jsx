@@ -22,10 +22,11 @@ const GridLightsReverseLazy = lazy(() => import('./components/GridLightsReverse/
 import ScrollIndicator from './components/ScrollIndicator/ScrollIndicator';
 const SelectableGrid = lazy(() => import('./components/SelectableGrid/SelectableGrid'));
 import MultilvelDropdown from './components/MultilevelDropdown/MultilevelDropdown';
-const FileExplorerWrapper = lazy(()=>import( './components/FileExplorer/FileExplorerWrapper'));
+const FileExplorerWrapper = lazy(() => import('./components/FileExplorer/FileExplorerWrapper'));
 const GenerateRandomColorCirclesLazy = lazy(() => import('./components/GenerateRandomColorCircles/GenerateRandomColorCircles'));
 import './App.css';
 import "./styles/globals.scss";
+const SliderProgressUI = lazy(() => import('./components/SliderProgressUI/SliderProgressUI'));
 
 function App() {
   return (
@@ -90,6 +91,9 @@ function App() {
               <Link to="/file-explorer">File Explorer</Link>
             </li>
             <li>
+              <Link to="/slider-progress-ui">Slider Progress UI</Link>
+            </li>
+            <li>
               <Link to="/dark-mode">Dark Mode</Link>
             </li>
           </ul>
@@ -124,6 +128,7 @@ function App() {
               <Route exact path="/selectable-grid" element={<SelectableGrid />} />
               <Route exact path="/elements-viewport" element={<ElementsInViewPort />} />
               <Route exact path="/file-explorer" element={<FileExplorerWrapper />} />
+              <Route exact path="/slider-progress-ui" element={<SliderProgressUI />} />
               <Route exact path="/generate-random-color-circles" element={<GenerateRandomColorCirclesLazy />} />
               <Route exact path="/dark-mode" element={<Navbar />} />
               <Route exact path="/" element={<Home />} />

@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Accordian.css";
 
-const Accordion = ({ title, info, id }) => {
+const Accordion = ({ title, info, id, indx }) => {
     const [show, setShow] = useState(false);
 
     const toggle = () => {
         setShow((prev) => !prev);
     };
+
+    useEffect(() => {
+        setShow(indx === 0 ? true : false);
+    }, []);
+    
     return (
         <>
             <div key={id} className="accordion">
