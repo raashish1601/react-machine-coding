@@ -26,6 +26,7 @@ const FileExplorerWrapper = lazy(() => import('./components/FileExplorer/FileExp
 const GenerateRandomColorCirclesLazy = lazy(() => import('./components/GenerateRandomColorCircles/GenerateRandomColorCircles'));
 import './App.css';
 import "./styles/globals.scss";
+import Stopwatch from './components/StopWatch/StopWatch';
 const SliderProgressUI = lazy(() => import('./components/SliderProgressUI/SliderProgressUI'));
 
 function App() {
@@ -91,6 +92,9 @@ function App() {
               <Link to="/file-explorer">File Explorer</Link>
             </li>
             <li>
+              <Link to="/stopwatch">Stopwatch</Link>
+            </li>
+            <li>
               <Link to="/slider-progress-ui">Slider Progress UI</Link>
             </li>
             <li>
@@ -129,6 +133,7 @@ function App() {
               <Route exact path="/elements-viewport" element={<ElementsInViewPort />} />
               <Route exact path="/file-explorer" element={<FileExplorerWrapper />} />
               <Route exact path="/slider-progress-ui" element={<SliderProgressUI />} />
+              <Route exact path="stopwatch" element={<Stopwatch/>}/>
               <Route exact path="/generate-random-color-circles" element={<GenerateRandomColorCirclesLazy />} />
               <Route exact path="/dark-mode" element={<Navbar />} />
               <Route exact path="/" element={<Home />} />
