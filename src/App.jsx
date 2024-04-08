@@ -28,6 +28,8 @@ import './App.css';
 import "./styles/globals.scss";
 const Stopwatch = lazy(()=>import( './components/StopWatch/StopWatch'));
 import ShowHidePassword from './components/ShowHidePassword/ShowHidePassword';
+import CaraouselWrapper from './components/Caraousel/CaraouselWrapper';
+import PaginationWrapper from './components/Pagination/PaginationWrapper';
 const SliderProgressUI = lazy(() => import('./components/SliderProgressUI/SliderProgressUI'));
 
 function App() {
@@ -96,6 +98,12 @@ function App() {
               <Link to="/stopwatch">Stopwatch</Link>
             </li>
             <li>
+              <Link to="/pagination">Pagination</Link>
+            </li>
+            <li>
+              <Link to="/caraousel">Caraousel</Link>
+            </li>
+            <li>
               <Link to="/show-hide-password">Show Hide Password</Link>
             </li>
             <li>
@@ -141,6 +149,8 @@ function App() {
               <Route exact path="show-hide-password" element={<ShowHidePassword/>}/>
               <Route exact path="/generate-random-color-circles" element={<GenerateRandomColorCirclesLazy />} />
               <Route exact path="/dark-mode" element={<Navbar />} />
+              <Route exact path="/pagination" element={<PaginationWrapper />} />
+              <Route exact path="/caraousel" element={<CaraouselWrapper />} />
               <Route exact path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
               <Route exact path="/blog" element={<Blog />} />
