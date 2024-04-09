@@ -27,9 +27,10 @@ const GenerateRandomColorCirclesLazy = lazy(() => import('./components/GenerateR
 import './App.css';
 import "./styles/globals.scss";
 const Stopwatch = lazy(()=>import( './components/StopWatch/StopWatch'));
-import ShowHidePassword from './components/ShowHidePassword/ShowHidePassword';
-import CaraouselWrapper from './components/Caraousel/CaraouselWrapper';
-import PaginationWrapper from './components/Pagination/PaginationWrapper';
+const ShowHidePassword = lazy(()=>import( './components/ShowHidePassword/ShowHidePassword'));
+const CaraouselWrapper = lazy(()=>import('./components/Caraousel/CaraouselWrapper'));
+const PaginationWrapper = lazy(()=>import('./components/Pagination/PaginationWrapper'));
+const InfiniteScrollWindowHeight = lazy(()=>import('./components/InfiniteScrollWindowHeight/InfiniteScrollWindowHeight'));
 const SliderProgressUI = lazy(() => import('./components/SliderProgressUI/SliderProgressUI'));
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
       <ThemeProvider>
         <ScrollIndicator />
         <MultilvelDropdown />
+        <InfiniteScrollWindowHeight/>
         <BrowserRouter>
           <ul>
             <li>
@@ -104,6 +106,9 @@ function App() {
               <Link to="/caraousel">Caraousel</Link>
             </li>
             <li>
+              <Link to="/infinite-scroll">Infinite Scroll</Link>
+            </li>
+            <li>
               <Link to="/show-hide-password">Show Hide Password</Link>
             </li>
             <li>
@@ -151,6 +156,7 @@ function App() {
               <Route exact path="/dark-mode" element={<Navbar />} />
               <Route exact path="/pagination" element={<PaginationWrapper />} />
               <Route exact path="/caraousel" element={<CaraouselWrapper />} />
+              <Route exact path="/infinite-scroll" element={<InfiniteScrollWindowHeight />} />
               <Route exact path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
               <Route exact path="/blog" element={<Blog />} />
