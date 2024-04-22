@@ -26,6 +26,7 @@ const FileExplorerWrapper = lazy(() => import('./components/FileExplorer/FileExp
 const GenerateRandomColorCirclesLazy = lazy(() => import('./components/GenerateRandomColorCircles/GenerateRandomColorCircles'));
 import './App.css';
 import "./styles/globals.scss";
+import TicTacToe from './components/TicTacToe/TicTacToe';
 const Stopwatch = lazy(()=>import( './components/StopWatch/StopWatch'));
 const ShowHidePassword = lazy(()=>import( './components/ShowHidePassword/ShowHidePassword'));
 const CaraouselWrapper = lazy(()=>import('./components/Caraousel/CaraouselWrapper'));
@@ -39,8 +40,8 @@ function App() {
       <ThemeProvider>
         <ScrollIndicator />
         <MultilvelDropdown />
-        <InfiniteScrollWindowHeight/>
         <BrowserRouter>
+        <TicTacToe/>
           <ul>
             <li>
               <Link to="/">Home</Link>
