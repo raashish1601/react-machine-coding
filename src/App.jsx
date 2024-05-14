@@ -27,6 +27,7 @@ const GenerateRandomColorCirclesLazy = lazy(() => import('./components/GenerateR
 import './App.css';
 import "./styles/globals.scss";
 import TicTacToe from './components/TicTacToe/TicTacToe';
+import Caraousel2 from './components/Caraousel2/Caraousel2';
 const Stopwatch = lazy(()=>import( './components/StopWatch/StopWatch'));
 const ShowHidePassword = lazy(()=>import( './components/ShowHidePassword/ShowHidePassword'));
 const CaraouselWrapper = lazy(()=>import('./components/Caraousel/CaraouselWrapper'));
@@ -107,6 +108,9 @@ function App() {
               <Link to="/caraousel">Caraousel</Link>
             </li>
             <li>
+              <Link to="/caraousel-2">Caraousel - 2</Link>
+            </li>
+            <li>
               <Link to="/infinite-scroll">Infinite Scroll</Link>
             </li>
             <li>
@@ -157,6 +161,7 @@ function App() {
               <Route exact path="/dark-mode" element={<Navbar />} />
               <Route exact path="/pagination" element={<PaginationWrapper />} />
               <Route exact path="/caraousel" element={<CaraouselWrapper />} />
+              <Route exact path="/caraousel-2" element={<Caraousel2 />} />
               <Route exact path="/infinite-scroll" element={<InfiniteScrollWindowHeight />} />
               <Route exact path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
