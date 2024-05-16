@@ -28,6 +28,7 @@ import './App.css';
 import "./styles/globals.scss";
 import TicTacToe from './components/TicTacToe/TicTacToe';
 import Caraousel2 from './components/Caraousel2/Caraousel2';
+import TextHighlight from './components/TextHighlight/TextHighlight';
 const Stopwatch = lazy(()=>import( './components/StopWatch/StopWatch'));
 const ShowHidePassword = lazy(()=>import( './components/ShowHidePassword/ShowHidePassword'));
 const CaraouselWrapper = lazy(()=>import('./components/Caraousel/CaraouselWrapper'));
