@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./styles.css";
+import "./TextHighlight.css";
 
 const str = `My name is Mazid Hussain and I am working as SDE1. Mazid Mazid Mazid Mazid`;
 

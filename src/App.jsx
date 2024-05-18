@@ -121,6 +121,9 @@ function App() {
               <Link to="/slider-progress-ui">Slider Progress UI</Link>
             </li>
             <li>
+              <Link to="/textHighlight">TextHighlight</Link>
+            </li>
+            <li>
               <Link to="/dark-mode">Dark Mode</Link>
             </li>
           </ul>
@@ -163,6 +166,7 @@ function App() {
               <Route exact path="/pagination" element={<PaginationWrapper />} />
               <Route exact path="/caraousel" element={<CaraouselWrapper />} />
               <Route exact path="/caraousel-2" element={<Caraousel2 />} />
+              <Route exact path="/textHighlight" element={<TextHighlight />} />
               <Route exact path="/infinite-scroll" element={<InfiniteScrollWindowHeight />} />
               <Route exact path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
