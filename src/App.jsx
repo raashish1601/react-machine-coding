@@ -30,6 +30,7 @@ import TicTacToe from './components/TicTacToe/TicTacToe';
 import Caraousel2 from './components/Caraousel2/Caraousel2';
 import TextHighlight from './components/TextHighlight/TextHighlight';
 import PaginationLimitWrapper from './components/PaginationLimit/PaginationWrapper';
+import NestedCommentsWrapper from './components/NestedComments/NestedCommentsWrapper';
 const Stopwatch = lazy(() => import('./components/StopWatch/StopWatch'));
 const ShowHidePassword = lazy(() => import('./components/ShowHidePassword/ShowHidePassword'));
 const CaraouselWrapper = lazy(() => import('./components/Caraousel/CaraouselWrapper'));
@@ -44,7 +45,7 @@ function App() {
         <ScrollIndicator />
         <MultilvelDropdown />
         <BrowserRouter>
-          <TicTacToe />
+          <NestedCommentsWrapper />
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -128,6 +129,9 @@ function App() {
               <Link to="/textHighlight">TextHighlight</Link>
             </li>
             <li>
+              <Link to="/ticTacToe">TicTacToe</Link>
+            </li>
+            <li>
               <Link to="/dark-mode">Dark Mode</Link>
             </li>
           </ul>
@@ -173,6 +177,7 @@ function App() {
               <Route exact path="/caraousel-2" element={<Caraousel2 />} />
               <Route exact path="/textHighlight" element={<TextHighlight />} />
               <Route exact path="/infinite-scroll" element={<InfiniteScrollWindowHeight />} />
+              <Route exact path="/ticTacToe" element={<TicTacToe />} />
               <Route exact path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
               <Route exact path="/blog" element={<Blog />} />
