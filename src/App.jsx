@@ -29,11 +29,12 @@ import "./styles/globals.scss";
 import TicTacToe from './components/TicTacToe/TicTacToe';
 import Caraousel2 from './components/Caraousel2/Caraousel2';
 import TextHighlight from './components/TextHighlight/TextHighlight';
-const Stopwatch = lazy(()=>import( './components/StopWatch/StopWatch'));
-const ShowHidePassword = lazy(()=>import( './components/ShowHidePassword/ShowHidePassword'));
-const CaraouselWrapper = lazy(()=>import('./components/Caraousel/CaraouselWrapper'));
-const PaginationWrapper = lazy(()=>import('./components/Pagination/PaginationWrapper'));
-const InfiniteScrollWindowHeight = lazy(()=>import('./components/InfiniteScrollWindowHeight/InfiniteScrollWindowHeight'));
+import PaginationLimitWrapper from './components/PaginationLimit/PaginationWrapper';
+const Stopwatch = lazy(() => import('./components/StopWatch/StopWatch'));
+const ShowHidePassword = lazy(() => import('./components/ShowHidePassword/ShowHidePassword'));
+const CaraouselWrapper = lazy(() => import('./components/Caraousel/CaraouselWrapper'));
+const PaginationWrapper = lazy(() => import('./components/Pagination/PaginationWrapper'));
+const InfiniteScrollWindowHeight = lazy(() => import('./components/InfiniteScrollWindowHeight/InfiniteScrollWindowHeight'));
 const SliderProgressUI = lazy(() => import('./components/SliderProgressUI/SliderProgressUI'));
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
         <ScrollIndicator />
         <MultilvelDropdown />
         <BrowserRouter>
-        <TicTacToe/>
+          <TicTacToe />
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -106,6 +107,9 @@ function App() {
               <Link to="/pagination">Pagination</Link>
             </li>
             <li>
+              <Link to="/paginationLimitWrapper">Pagination Limit Wrapper</Link>
+            </li>
+            <li>
               <Link to="/caraousel">Caraousel</Link>
             </li>
             <li>
@@ -159,11 +163,12 @@ function App() {
               <Route exact path="/elements-viewport" element={<ElementsInViewPort />} />
               <Route exact path="/file-explorer" element={<FileExplorerWrapper />} />
               <Route exact path="/slider-progress-ui" element={<SliderProgressUI />} />
-              <Route exact path="stopwatch" element={<Stopwatch/>}/>
-              <Route exact path="show-hide-password" element={<ShowHidePassword/>}/>
+              <Route exact path="stopwatch" element={<Stopwatch />} />
+              <Route exact path="show-hide-password" element={<ShowHidePassword />} />
               <Route exact path="/generate-random-color-circles" element={<GenerateRandomColorCirclesLazy />} />
               <Route exact path="/dark-mode" element={<Navbar />} />
               <Route exact path="/pagination" element={<PaginationWrapper />} />
+              <Route exact path="/paginationLimitWrapper" element={<PaginationLimitWrapper />} />
               <Route exact path="/caraousel" element={<CaraouselWrapper />} />
               <Route exact path="/caraousel-2" element={<Caraousel2 />} />
               <Route exact path="/textHighlight" element={<TextHighlight />} />
