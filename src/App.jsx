@@ -45,10 +45,12 @@ function App() {
         <ScrollIndicator />
         <MultilvelDropdown />
         <BrowserRouter>
-          <NestedCommentsWrapper />
           <ul>
             <li>
               <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/nested-comment">Nested Comments</Link>
             </li>
             <li>
               <Link to="/star-rating">Star Rating</Link>
@@ -178,6 +180,7 @@ function App() {
               <Route exact path="/textHighlight" element={<TextHighlight />} />
               <Route exact path="/infinite-scroll" element={<InfiniteScrollWindowHeight />} />
               <Route exact path="/ticTacToe" element={<TicTacToe />} />
+              <Route exact path="/nested-comment" element={<NestedCommentsWrapper />} />
               <Route exact path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
               <Route exact path="/blog" element={<Blog />} />
