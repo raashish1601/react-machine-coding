@@ -13,6 +13,7 @@ function StarRating({ value, total }) {
         }
         setSelection(val);
     };
+    
     return (
         <div
             className={styles['starsContainer']}

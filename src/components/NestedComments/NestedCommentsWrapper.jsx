@@ -5,7 +5,7 @@ const NestedCommentsWrapper = () => {
     return (
         <div>
             <h1>Nested Comments</h1>
-            <CommentsManager maxDepth={3} />
+            <CommentsManager maxDepth={30} />
         </div>
     );
 };

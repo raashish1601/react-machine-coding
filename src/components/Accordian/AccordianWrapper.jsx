@@ -7,7 +7,7 @@ export default function AccordianWrapper() {
             <h1>Accordion</h1>
 
             {ACCORDIAN_DATA.map((question, indx) => {
-                return <Accordion {...question} indx={indx} />;
+                return <Accordion key={question.id} {...question} indx={indx} />;
             })}
         </div>
     );

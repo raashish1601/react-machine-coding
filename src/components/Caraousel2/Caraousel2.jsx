@@ -21,17 +21,14 @@ const items = [
 
 function Caraousel2() {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [animationDirection, setAnimationDirection] = useState('next');
 
     // Manual scrolling handlers
     const scrollLeft = () => {
         setCurrentIndex((prevIndex) => (prevIndex === 0 ? items.length - 1 : prevIndex - 1));
-        setAnimationDirection('prev');
     };
 
     const scrollRight = () => {
         setCurrentIndex((prevIndex) => (prevIndex === items.length - 1 ? 0 : prevIndex + 1));
-        setAnimationDirection('next');
     };
 
     // Automatic scrolling

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PROGRESS_BAR_MIN_VALUE, PROGRESS_BAR_MAX_VALUE } from "../../constants/constants";
 import styles from './ProgressBar.module.scss';
 
@@ -37,4 +37,4 @@ function ProgressBar({ value = 0, onComplete = () => { } }) {
   );
 }
 
-export default ProgressBar;
+export default React.memo(ProgressBar);
