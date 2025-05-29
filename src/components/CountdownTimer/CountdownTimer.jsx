@@ -1,5 +1,4 @@
-// src/CountdownTimer.js
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const CountdownTimer = () => {
   const [inputDays, setInputDays] = useState(0);
@@ -31,10 +30,10 @@ const CountdownTimer = () => {
 
   const handleStart = () => {
     const totalSeconds = 
-      parseInt(inputDays) * 86400 + 
-      parseInt(inputHours) * 3600 + 
-      parseInt(inputMinutes) * 60 + 
-      parseInt(inputSeconds);
+      parseInt(inputSeconds) + //1
+      parseInt(inputMinutes) * 60 + //60
+      parseInt(inputHours) * 3600 + //60*60
+      parseInt(inputDays) * 86400;  //24*60*60
     setTime(totalSeconds);
     setIsRunning(true);
   };
@@ -53,10 +52,10 @@ const CountdownTimer = () => {
   };
 
   const formatTime = (time) => {
-    const days = Math.floor(time / 86400);
-    const hours = Math.floor((time % 86400) / 3600);
-    const minutes = Math.floor((time % 3600) / 60);
     const seconds = time % 60;
+    const minutes = Math.floor((time % 3600) / 60);
+    const hours = Math.floor((time % 86400) / 3600);
+    const days = Math.floor(time / 86400);
     return `${days}d ${hours}h ${minutes}m ${seconds}s`;
   };
 
