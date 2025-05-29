@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const items = [
     {
@@ -21,8 +21,9 @@ const items = [
 
 function Caraousel2() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const intervalRef = useRef(null);
+    const carouselRef = useRef(null);
 
-    // Manual scrolling handlers
     const scrollLeft = () => {
         setCurrentIndex((prevIndex) => (prevIndex === 0 ? items.length - 1 : prevIndex - 1));
     };
@@ -31,19 +32,48 @@ function Caraousel2() {
         setCurrentIndex((prevIndex) => (prevIndex === items.length - 1 ? 0 : prevIndex + 1));
     };
 
-    // Automatic scrolling
+    const startAutoSlide = () => {
+        stopAutoSlide(); // Ensure no duplicate intervals
+        intervalRef.current = setInterval(scrollRight, 3000);
+    };
+
+    const stopAutoSlide = () => {
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+            intervalRef.current = null;
+        }
+    };
+
     useEffect(() => {
-        const interval = setInterval(scrollRight, 3000); // Change slide every 3 seconds
-        return () => clearInterval(interval);
+        startAutoSlide();
+
+        const handleKeyDown = (e) => {
+            if (e.key === 'ArrowLeft') {
+                scrollLeft();
+            } else if (e.key === 'ArrowRight') {
+                scrollRight();
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            stopAutoSlide();
+            document.removeEventListener('keydown', handleKeyDown);
+        };
     }, []);
 
-    // Dot click handler
     const handleDotClick = (index) => {
         setCurrentIndex(index);
     };
 
     return (
-        <div style={{ position: 'relative', maxWidth: '600px', margin: 'auto' }}>
+        <div
+            ref={carouselRef}
+            onMouseEnter={stopAutoSlide}
+            onMouseLeave={startAutoSlide}
+            style={{ position: 'relative', maxWidth: '600px', margin: 'auto' }}
+        >
             <div style={{ display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
                 <button onClick={scrollLeft} style={{ zIndex: 1, position: 'absolute', left: 0 }}>{'<'}</button>
                 <div
@@ -51,6 +81,7 @@ function Caraousel2() {
                         display: 'flex',
                         transition: 'transform 0.5s ease',
                         transform: `translateX(-${currentIndex * 100}%)`,
+                        width: '100%',
                     }}
                 >
                     {items.map((item, index) => (
